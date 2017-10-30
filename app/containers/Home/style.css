@@ -1,7 +1,42 @@
 /* Home Styles */
 
-.container {
-  display:flex;
-  flex-direction:column;
-  min-height:100vh;
+.homeContainer {
+  display:fixed;
+  height:100vh;
+  background-size: cover;
+  background-attachment:fixed;
+  z-index: 0;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.homeFullOverlay {
+  position: absolute;
+  left:0;
+  top:0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: -1;
+}
+
+.welcome-text {
+  display: flex;
+  flex-direction: column;
+  height: 20vh;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  margin: 0 auto;
+  color: black;
+  font-size: 1em;
+}
+
+.helloJob {
+  font-family: 'Dosis', sans-serif;
+  font-size: 3.4em;
+}
+
+.subHeader {
+  font-family: 'Open Sans', sans-serif;
 }

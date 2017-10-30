@@ -1,8 +1,5 @@
 /* Register Styles */
 .registerContainer {
-  background-color: white;
-  height: auto;
-  width: 350px;
   border-radius: 13px;
   display: flex;
   flex-direction: column;
@@ -20,7 +17,7 @@
   position: fixed;
   width: 100vw;
   height: 500vh;
-  bottom: 0;
+  top: 0;
   z-index: 10;
   left:0;
   background:rgba(0, 0, 0, 0.3);

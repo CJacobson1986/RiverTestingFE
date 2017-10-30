@@ -14,8 +14,8 @@ import './style.css';
 import './styleM.css';
 
 export default class NavBar extends React.PureComponent {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       logIn:false,
       register:false
@@ -54,14 +54,15 @@ export default class NavBar extends React.PureComponent {
   render() {
     return (
       <div className="navContainer">
-        <div className="siteName">Savannah River Keeper</div>
-        <nav className="nav">
-        {this.renderLogIn()}
-        {this.renderRegister()}
-        <div className="entranceButtons">
-          <input type="submit" className="register" value="Register" onClick={this.handleRegister}/>
-          <input type="submit" className="logIn" value="Log-In" onClick={this.handleLogIn}/>
+        <div className="siteName">Savannah River Keeper
         </div>
+        <nav className="nav">
+          {this.renderLogIn()}
+          {this.renderRegister()}
+          <div className="entranceButtons">
+            <input type="submit" className="register" value="Register" onClick={this.handleRegister}/>
+            <input type="submit" className="logIn" value="Log-In" onClick={this.handleLogIn}/>
+          </div>
         </nav>
       </div>
     );
