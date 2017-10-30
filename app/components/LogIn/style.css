@@ -1,0 +1,61 @@
+/* LogIn Styles */
+.logInContainer {
+  background-color: white;
+  height: auto;
+  width: 350px;
+  border-radius: 13px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  margin-top: 33vh;
+  margin-left: 41vw;
+  font-family: 'Play', sans-serif;
+  z-index: 11;
+  font-size: 1.2em;
+}
+
+.logInUnderlay{
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  width: 100vw;
+  height: 500vh;
+  bottom: 0;
+  z-index: 10;
+  left:0;
+  background:rgba(0, 0, 0, 0.3);
+}
+
+.logInInput {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 11;
+}
+
+.renuiDialogOverlayHidden {
+  display:none;
+}
+
+.logInButton{
+  width: 80px;
+  padding: 10px;
+  margin-top: 20vh;
+}
+
+.emailLogIn {
+  padding: 5px;
+  width: 150px;
+  margin-top: 20px;
+}
+
+.passwordLogIn {
+  padding: 5px;
+  width: 150px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+h3 {
+
+}
