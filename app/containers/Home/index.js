@@ -18,11 +18,16 @@ export default class Home extends React.PureComponent {
       <div className="homeContainer">
         <Helmet title="Home" meta={[ { name: 'description', content: 'Description of Home' }]}/>
           <NavBar/>
-          <div className="homeFullOverlay">
-          </div>
           <div className="welcome-text">
-              <h1 className="helloJob">SRK River Testing</h1>
-              <h3 className="subHeader">Schedualing the SRK river testing.</h3>
+              <h1 className="helloJob">SRK River Ambasador Program</h1>
+              <div className="subHeader">Schedualing for the SRK River Testing Program.
+            </div>
+          </div>
+          <div className="firstScrollPic"></div>
+          <div className="bodyText">This is where the description of the site will reside.
+          </div>
+          <div className="secondScrollPic"></div>
+          <div className="homeFooter">This is where the contact info and stuff will go.
           </div>
       </div>
     );

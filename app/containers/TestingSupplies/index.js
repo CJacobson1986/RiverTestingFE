@@ -13,10 +13,17 @@ import './styleM.css';
 export default class TestingSupplies extends React.PureComponent {
   render() {
     return (
-      <div className="container">
+      <div className="productContainer">
         <Helmet title="TestingSupplies" meta={[ { name: 'description', content: 'Description of TestingSupplies' }]}/>
+        <div className="productHeader">
 
-        //Remove this line and you can start writing your code here.
+        </div>
+        <div className="productList">
+
+        </div>
+        <div className="productFooter">
+
+        </div>
       </div>
     );
   }

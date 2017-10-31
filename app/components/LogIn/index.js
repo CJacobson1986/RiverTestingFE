@@ -49,23 +49,26 @@ export default class LogIn extends React.PureComponent {
       method:'Post',
       body:data
       })
-      .then(function(response) {
-        return response.json();
-      })
-      .then(function(json) {
-        if(json.error) {
-          _this.setState({
-            notificationTwo: json.error
-          })
-        }
-        else {
-          _this.setState({
-            notificationTwo: json.success
-          })
-          console.log(json.token);
-          sessionStorage.setItem('token', json.token);
-        }
-      }.bind(this))
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(json) {
+      if(json.error) {
+        _this.setState({
+          notificationTwo: json.error
+        })
+      }
+      else {
+        _this.setState({
+          notificationTwo: json.success
+        })
+        sessionStorage.setItem('token', json.token);
+        setTimeout(function(){
+          let url = '/TestingSupplies/';
+          _this.context.router.history.push(url);
+        }, 1000)
+      }
+    }.bind(this))
   }
 
 
@@ -79,12 +82,11 @@ export default class LogIn extends React.PureComponent {
               </div>
             <div className="logInContainer">
               <div className="logInInput">
-                <h3>Log-In for SRK River Testing</h3>
+                <div className="logInTitle">Log-In for SRK <br/> River Ambasadors</div>
                 <input type="text" className="emailLogIn" value={this.state.email} onChange={this.handleEmail} placeholder="E-mail"/>
-
                 <input type="password" className="passwordLogIn" value={this.state.password} onKeyDown={this.enterKey} onChange={this.handlePassword} placeholder="Password"/>
                 <input type="submit" className="logInButton" placeholder="Log In" onClick={this.logIn} />
-                <p className="submitNoteTwo">{this.state.notificationTwo}</p>
+                <div className="submitNoteTwo">{this.state.notificationTwo}</div>
               </div>
             </div>
           </div>

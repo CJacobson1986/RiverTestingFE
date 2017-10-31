@@ -13,9 +13,12 @@ export default class Register extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      email:"",
+      email: "",
       password: "",
-      notification:"",
+      fullName: "",
+      phoneNumber: "",
+      notification: "",
+      role_id: 1,
       open: this.props.open
     }
   }
@@ -25,9 +28,22 @@ export default class Register extends React.PureComponent {
       email:event.target.value
     })
   }
+
   handlePassword = (event) => {
     this.setState({
       password:event.target.value
+    })
+  }
+
+  handleFullName = (event) => {
+    this.setState({
+      fullName:event.target.value
+    })
+  }
+
+  handlePhoneNumber =(event) => {
+    this.setState({
+      phoneNumber:event.target.value
     })
   }
 
@@ -44,8 +60,11 @@ export default class Register extends React.PureComponent {
     let _this = this;
     data.append('email', this.state.email);
     data.append('password', this.state.password);
+    data.append('fullName', this.state.fullName);
+    data.append('phoneNumber', this.state.phoneNumber);
+    data.append('role_id', this.state.role_id);
 
-    fetch('http://localhost:8000/api/register', {
+    fetch('http://localhost:8000/api/store', {
       method:'Post',
       body:data
       })
@@ -79,12 +98,13 @@ export default class Register extends React.PureComponent {
               </div>
             <div className="registerContainer">
               <div className="registerInput">
-                <h3>Register for SRK River Testing</h3>
+                <div className="registerTitle">Registration for SRK River Ambasadors</div>
                 <input type="text" className="emailRegister" value={this.state.email} onChange={this.handleEmail} placeholder="E-mail"/>
-
+                <input type="text" className="phoneNumberRegister" value={this.state.phoneNumber} onChange={this.handlePhoneNumber} placeholder="Phone Number"/>
+                <input type="text" className="fullNameRegister" value={this.state.fullName} onChange={this.handleFullName} placeholder="Full Name"/>
                 <input type="password" className="passwordRegister" value={this.state.password} onKeyDown={this.enterKey} onChange={this.handlePassword} placeholder="Password"/>
-                <input type="submit" className="registerButton" placeholder="Register" onClick={this.signIn} />
-                <p className="submitNote">{this.state.notification}</p>
+                <input type="submit" className="registerButton" placeholder="Register" onClick={this.register}/>
+                <div className="submitNote">{this.state.notification}</div>
               </div>
             </div>
           </div>

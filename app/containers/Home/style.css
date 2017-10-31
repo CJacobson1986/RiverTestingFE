@@ -2,41 +2,76 @@
 
 .homeContainer {
   display:fixed;
-  height:100vh;
+  top: 0;
   background-size: cover;
   background-attachment:fixed;
   z-index: 0;
   margin: 0 auto;
   justify-content: center;
-}
-
-.homeFullOverlay {
-  position: absolute;
-  left:0;
-  top:0;
-  height: 100vh;
-  width: 100vw;
-  background-color: rgba(0, 0, 0, 0.2);
-  z-index: -1;
+  background-color: rgba(20, 90, 125, 1);
 }
 
 .welcome-text {
   display: flex;
   flex-direction: column;
   height: 20vh;
-  justify-content: center;
   align-items: center;
   z-index: 2;
-  margin: 0 auto;
-  color: black;
+  color: white;
   font-size: 1em;
+  cursor: default;
+  margin-bottom: 80px;
 }
 
 .helloJob {
-  font-family: 'Dosis', sans-serif;
+  font-family: 'PT Serif Caption', serif;
   font-size: 3.4em;
+  margin-top: 100px;
+  margin-bottom: 10px;
 }
 
 .subHeader {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Encode Sans Condensed', sans-serif;
+  font-size: 1.5em;
+  margin-bottom: 100px;
+}
+
+.firstScrollPic {
+  background:url('../../images/SRK-Heron-Banner-Logo.jpg');
+  background-size:contain;
+  background-position:center center;
+  width:80%;
+  height:200px;
+  background-attachment: fixed;
+  margin-left: 10%;
+}
+
+.bodyText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  color: white;
+  font-size: 1.8em;
+}
+
+.secondScrollPic{
+  background:url('../../images/SRK-Bird-Only-Logo.jpg');
+  background-size:contain;
+  background-position:center center;
+  width:80%;
+  height:200px;
+  background-attachment: fixed;
+  margin-left: 10%;
+}
+
+.homeFooter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  color: white;
+  font-size: 1.8em;
 }

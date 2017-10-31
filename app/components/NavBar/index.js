@@ -54,8 +54,7 @@ export default class NavBar extends React.PureComponent {
   render() {
     return (
       <div className="navContainer">
-        <div className="siteName">Savannah River Keeper
-        </div>
+        <img className="logoSRK" src={require("../../images/SRK-Heron-Banner-Logo.jpg")}/>
         <nav className="nav">
           {this.renderLogIn()}
           {this.renderRegister()}

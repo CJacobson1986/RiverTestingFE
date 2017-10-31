@@ -1,17 +1,27 @@
 /* LogIn Styles */
+.logInFullContainer {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:fixed;
+  left:0;
+  top:0;
+  min-height:100vh;
+  width:100%;
+}
+
 .logInContainer {
-  background-color: white;
-  height: auto;
-  width: 350px;
   border-radius: 13px;
   display: flex;
   flex-direction: column;
-  position: absolute;
-  margin-top: 33vh;
-  margin-left: 41vw;
+  background-color:  rgba(20, 90, 125, 1);
   font-family: 'Play', sans-serif;
+  height: 280px;
+  width: 250px;
   z-index: 11;
   font-size: 1.2em;
+  color: white;
+  box-shadow: 5px 5px 5px rgba(0,0,0,.7);
 }
 
 .logInUnderlay{
@@ -23,7 +33,7 @@
   bottom: 0;
   z-index: 10;
   left:0;
-  background:rgba(0, 0, 0, 0.3);
+  background:rgba(0, 0, 0, 0.6);
 }
 
 .logInInput {
@@ -34,6 +44,11 @@
   z-index: 11;
 }
 
+.logInTitle {
+  text-align: center;
+  font-size: 1.2em;
+}
+
 .renuiDialogOverlayHidden {
   display:none;
 }
@@ -41,7 +56,12 @@
 .logInButton{
   width: 80px;
   padding: 10px;
-  margin-top: 20vh;
+  text-decoration: none;
+  font-weight:bold;
+  font-variant: small-caps;
+  background-color:  rgba(20, 90, 125, 1);
+  cursor:pointer;
+  color: white;
 }
 
 .emailLogIn {
@@ -56,6 +76,6 @@
   margin-top: 10px;
   margin-bottom: 20px;
 }
-h3 {
-
+.submitNoteTwo {
+padding-top: 15px;
 }
