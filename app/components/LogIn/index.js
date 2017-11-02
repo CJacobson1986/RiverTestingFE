@@ -63,6 +63,7 @@ export default class LogIn extends React.PureComponent {
           notificationTwo: json.success
         })
         sessionStorage.setItem('token', json.token);
+        sessionStorage.setItem('id', json.user.id);
         setTimeout(function(){
           let url = '/TestingSupplies/';
           _this.context.router.history.push(url);
