@@ -57,6 +57,9 @@ export default class TestingSupplies extends React.PureComponent {
         <p>Name: {this.state.user.fullName}</p>
         <p>Email: {this.state.user.email}</p>
         <p>Phone Number: {this.state.user.phoneNumber}</p>
+        <p>Address: {this.state.user.address}</p>
+        <p>Certification: {this.state.user.certification}</p>
+        <p>Certification Id: {this.state.user.certificationId}</p>
         </div>
         <div className="productList">
         <button className="button" onClick={this.openDatePicker}>Click here to select pick-up date</button>

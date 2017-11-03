@@ -18,6 +18,9 @@ export default class Register extends React.PureComponent {
       fullName: "",
       phoneNumber: "",
       notification: "",
+      address: "",
+      certification: "",
+      certificationId: "",
       role_id: 1,
       open: this.props.open
     }
@@ -47,6 +50,24 @@ export default class Register extends React.PureComponent {
     })
   }
 
+  handleAddress =(event) => {
+    this.setState({
+      address:event.target.value
+    })
+  }
+
+  handleCertification =(event) => {
+    this.setState({
+      certification:event.target.value
+    })
+  }
+
+  handleCertificationId =(event) => {
+    this.setState({
+      certificationId:event.target.value
+    })
+  }
+
   enterKey = (event) => {
     var key = event.keyCode;
 
@@ -62,6 +83,9 @@ export default class Register extends React.PureComponent {
     data.append('password', this.state.password);
     data.append('fullName', this.state.fullName);
     data.append('phoneNumber', this.state.phoneNumber);
+    data.append('address', this.state.address);
+    data.append('certification', this.state.certification);
+    data.append('certificationId', this.state.certificationId);
     data.append('role_id', this.state.role_id);
 
     fetch('http://localhost:8000/api/store', {
@@ -102,6 +126,9 @@ export default class Register extends React.PureComponent {
                 <input type="text" className="emailRegister" value={this.state.email} onChange={this.handleEmail} placeholder="E-mail"/>
                 <input type="text" className="phoneNumberRegister" value={this.state.phoneNumber} onChange={this.handlePhoneNumber} placeholder="Phone Number"/>
                 <input type="text" className="fullNameRegister" value={this.state.fullName} onChange={this.handleFullName} placeholder="Full Name"/>
+                <input type="text" className="addressRegister" value={this.state.address} onChange={this.handleAddress} placeholder="Address"/>
+                <input type="text" className="certificationRegister" value={this.state.certification} onChange={this.handleCertification} placeholder="Certification"/>
+                <input type="text" className="certificationIdRegister" value={this.state.certificationId} onChange={this.handleCertificationId} placeholder="Certification Id Number"/>
                 <input type="password" className="passwordRegister" value={this.state.password} onKeyDown={this.enterKey} onChange={this.handlePassword} placeholder="Password"/>
                 <input type="submit" className="registerButton" placeholder="Register" onClick={this.register}/>
                 <div className="submitNote">{this.state.notification}</div>

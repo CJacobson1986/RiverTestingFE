@@ -17,7 +17,7 @@
   flex-direction: column;
   background-color:  rgba(20, 90, 125, 1);
   font-family: 'Play', sans-serif;
-  height: 340px;
+  height: 440px;
   width: 250px;
   z-index: 11;
   font-size: 1.2em;
@@ -79,6 +79,24 @@
 }
 
 .fullNameRegister {
+  padding: 5px;
+  width: 150px;
+  margin-top: 10px;
+}
+
+.addressRegister {
+  padding: 5px;
+  width: 150px;
+  margin-top: 10px;
+}
+
+.certificationRegister {
+  padding: 5px;
+  width: 150px;
+  margin-top: 10px;
+}
+
+.certificationIdRegister {
   padding: 5px;
   width: 150px;
   margin-top: 10px;

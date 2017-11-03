@@ -7,16 +7,16 @@
   background-attachment:fixed;
   z-index: 0;
   margin: 0 auto;
-  justify-content: center;
   background-color: rgba(20, 90, 125, 1);
+  padding-top: 15vh;
 }
 
 .homeTitle {
   display: flex;
   flex-direction: column;
+  text-align: center;
   height: 20vh;
   width: 70%;
-  align-items: center;
   z-index: 2;
   color: white;
   font-size: 1em;
@@ -24,7 +24,6 @@
   margin-left: 15%;
   font-family: 'PT Serif Caption', serif;
   font-size: 3.4em;
-  margin-top: 100px;
 }
 
 .subHeader {
@@ -34,6 +33,7 @@
   margin-left: 15%;
   margin-bottom: 25px;
   color: white;
+  text-align: center;
 }
 
 .firstScrollPic {
@@ -49,7 +49,7 @@
 .bodyText {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  text-align: center;
   margin-top: 25px;
   margin-bottom: 25px;
   color: white;
@@ -71,7 +71,7 @@
 .homeFooter {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  text-align: center;
   margin-top: 15px;
   margin-bottom: 15px;
   color: white;
