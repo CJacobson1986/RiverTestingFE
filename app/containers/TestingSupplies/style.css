@@ -6,19 +6,41 @@
   background-size: cover;
   background-attachment:fixed;
   z-index: 0;
-  margin: 0 auto;
-  justify-content: center;
   min-height:100vh;
   width:100%;
   background-color: rgba(20, 90, 125, 1);
   text-align: center;
   font-size: 1.6em;
+  margin-top: 80px;
+}
+
+.productHeaderContainer {
+  display: flex;
+  flex-direction: row;
 }
 
 .productHeader {
   color: white;
-  display: fixed;
-  margin: 0 auto;
+  width: 50%;
+  margin-top: 15px;
+  text-align: right;
+}
+
+.productHeader p {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.productHeaderBE {
+  color: white;
+  width: 50%;
+  margin-top: 15px;
+  text-align: left;
+  margin-left: 5px;
+}
+
+.productHeaderBE p {
+  margin-bottom: 15px;
 }
 
 .productList {
@@ -28,12 +50,69 @@ width: 100%;
 .button {
   cursor: pointer;
   padding: 5px;
+  margin-bottom: 15px;
 }
 
-.productFooter {
+.productPickUp {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 15px;
+}
+
+.productPickUpTitle {
   color: white;
+  width: 50%;
+  font-weight: bold;
+  text-align: right;
+  margin-right: 5px;
+}
+
+.productPickUpDate {
+  color: white;
+  width: 50%;
+  text-align: left;
 }
 
 .dp {
   display:none;
+}
+
+.productFrequencyList{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 15px;
+}
+
+.productFrequencyTitle {
+  color: white;
+  width: 50%;
+  font-weight: bold;
+  text-align: right;
+  margin-right: 5px;
+}
+
+.productFrequency {
+}
+
+.testingLocation {
+  color: white;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 15px;
+}
+
+.testingLocationTitle{
+  width: 50%;
+  text-align: right;
+  margin-right: 5px;
+}
+
+.profileSubmit {
+  padding: 5px;
+  margin-bottom: 15px;
+}
+
+.profileNotification {
+  color: white;
 }

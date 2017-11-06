@@ -16,14 +16,17 @@
   flex-direction: column;
   text-align: center;
   height: 20vh;
-  width: 70%;
+  width: 100%;
   z-index: 2;
   color: white;
   font-size: 1em;
   cursor: default;
-  margin-left: 15%;
   font-family: 'PT Serif Caption', serif;
   font-size: 3.4em;
+}
+
+.subTitle {
+  font-size: .8em;
 }
 
 .subHeader {
@@ -36,14 +39,19 @@
   text-align: center;
 }
 
+.firstFixedPic {
+  width: 100px;
+  height: 100px;
+}
+
 .firstScrollPic {
   background:url('../../images/SRK-RiverRapids.jpg');
   background-size:cover;
   background-position:center center;
-  width:80%;
-  height:400px;
+  width:90%;
+  height:250px;
   background-attachment: fixed;
-  margin-left: 10%;
+  margin-left: 5%;
 }
 
 .bodyText {
@@ -59,13 +67,13 @@
 }
 
 .secondScrollPic{
-  background:url('../../images/SunRise-on-SavannahRiver3.jpg');
+  background:url('../../images/SRK-boatTires.jpg');
   background-size:cover;
   background-position:center center;
-  width:80%;
-  height:400px;
+  width:90%;
+  height:250px;
   background-attachment: fixed;
-  margin-left: 10%;
+  margin-left: 5%;
 }
 
 .homeFooter {

@@ -105,7 +105,6 @@ export default class Register extends React.PureComponent {
           _this.setState({
             notification: json.success
           })
-          console.log(json.token);
           sessionStorage.setItem('token', json.token);
         }
       }.bind(this))
