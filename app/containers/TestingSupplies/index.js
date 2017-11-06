@@ -9,6 +9,7 @@ import Helmet from 'react-helmet';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import DatePicker from 'material-ui/DatePicker';
 import NavBarMain from 'components/NavBarMain';
+import GooMap from 'components/GooMap';
 
 import './style.css';
 import './styleM.css';
@@ -17,7 +18,7 @@ export default class TestingSupplies extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      date:"Select date...",
+      date:"",
       user:"",
       fullName: "",
       phoneNumber: "",
@@ -106,6 +107,14 @@ export default class TestingSupplies extends React.PureComponent {
     })
   }
 
+  enterKey = (event) => {
+    var key = event.keyCode;
+
+    if (key === 13) {
+      this.updateProfile();
+    }
+  }
+
   render() {
     return (
       <div className="productContainer">
@@ -131,7 +140,7 @@ export default class TestingSupplies extends React.PureComponent {
         </div>
         <div className="productList">
           <button className="button" onClick={this.openDatePicker}>Click here to select pick-up date</button>
-          <MuiThemeProvider><DatePicker  className='dp' textFieldStyle={{cursor: 'pointer'}} ref='dp' hintText="nothing" onChange={this.handleDate}/></MuiThemeProvider>
+          <MuiThemeProvider><DatePicker  className='datePicker' textFieldStyle={{cursor: 'pointer'}} ref='datePicker' hintText="nothing" onChange={this.handleDate}/></MuiThemeProvider>
         </div>
         <div className="productPickUp">
           <div className="productPickUpTitle">
@@ -154,9 +163,10 @@ export default class TestingSupplies extends React.PureComponent {
           <div className="testingLocationTitle">
           Testing Location:
           </div>
-          <input type="text" onChange={this.handleTestingLocation} placeholder="GPS Coordinates"/>
+          <input type="text" onChange={this.handleTestingLocation} onKeyDown={this.enterKey} placeholder="GPS Coordinates"/>
         </div>
-        <input type="submit" className="profileSubmit" onClick={this.updateProfile}/><br/>
+        <GooMap/>
+        <input type="submit" className="profileSubmit"  onClick={this.updateProfile}/><br/>
         <div className="profileNotification">{this.state.notification}</div>
       </div>
     );
