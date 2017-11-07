@@ -8,6 +8,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { Link } from 'react-router-dom';
 import NavBarHome from 'components/NavBarHome';
+import NavBarMain from 'components/NavBarMain';
 
 import './style.css';
 import './styleM.css';
@@ -19,11 +20,25 @@ export default class Home extends React.PureComponent {
       image:""
     }
   }
+
+  renderNav = () =>
+  {
+      if(sessionStorage.getItem('token') !== null || sessionStorage.getItem('token') !== '')
+      {
+        return (
+          <NavBarMain/>
+        )
+      }
+      else return (
+        <NavBarHome/>
+      )
+  }
+
   render() {
     return (
       <div className="homeContainer">
         <Helmet title="Home" meta={[ { name: 'description', content: 'Description of Home' }]}/>
-          <NavBarHome/>
+          {this.renderNav()}
           <div className="homeTitle">Savannah River Watch Program
           <p className="subTitle">"Ensuring a Swimable, Fishable Savannah River"</p>
           </div>

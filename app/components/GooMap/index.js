@@ -11,56 +11,59 @@ import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-map
 import './style.css';
 import './styleM.css';
 
-const MyMapComponent = compose(
-  withProps({
-    googleMapURL:"https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBaCSTynQm-OT6I63Cg4m7i8WG2TiHpMbs&libraries=geometry,drawing,places",
-      loadingElement:<div style={{ height:'100%'}} />,
-      containerElement:<div style={{ height:'400px'}} />,
-      mapElement:<div style={{ height:'100%'}} />
-  }),
-   withScriptjs,
-   withGoogleMap
-  )((props) =>
-  <GoogleMap
-    defaultZoom={8}
-    defualtCenter={{ lat:-34.397, lng: 150.644 }}
-  >
-    {props.isMarkerShown && <Marker position={{ lat: -34.397, lng: 150.644 }} onCLick={props.onMarkerClick} />}
-  </GoogleMap>
-);
-
 export default class GooMap extends React.PureComponent {
+
   constructor(props) {
     super(props);
     this.state= {
-      isMarkerShown: false,
+      center: {
+        lat: 33.4645243,
+        lng: -81.9336476
+      }
     }
   }
 
-  componentDidMount() {
-    this.delayedShowMarker()
-  }
-
-  delayedShowMarker = () => {
-    setTimeout(() => {
-      this.setState({ isMarkerShown: true})
-    }, 2000)
-  }
-
-  handleMarkerClick = () => {
-    this.setState({ isMarkerShown: false })
-    this.delayedShowMarker()
+  handleMarkerClick = (event) => {
+    let lat = event.latLng.lat();
+    let lng = event.latLng.lng();
+    let marker = {
+      lat: lat,
+      lng: lng
+    }
+    this.setState({
+      center: marker
+    }, function() {
+      this.props.setCoords(this.state.center)
+      this.forceUpdate();
+    }.bind(this))
   }
 
   render() {
-    return (
-      <div>
-      <MyMapComponent isMarkerShown={this.state.isMarkerShown} onMarkerClick={this.handleMarkerClick}/>
-      </div>
-    );
-  }
+
+  const MyMapComponent = compose(
+    withProps({
+      googleMapURL:
+        "https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places",
+      loadingElement: <div style={{ height: `100%` }} />,
+      containerElement: <div style={{ height: `400px` }} />,
+      mapElement: <div style={{ height: `100%` }} />
+    }),
+    withScriptjs,
+    withGoogleMap
+  )(props => (
+    <GoogleMap defaultZoom={12} defaultCenter={{ lat: this.state.center.lat, lng: this.state.center.lng }} onClick={this.handleMarkerClick}>
+      <Marker position={{ lat: this.state.center.lat, lng: this.state.center.lng }}/>
+    </GoogleMap>
+  ));
+
+  return (
+    <div id="map">
+    <MyMapComponent/>
+    </div>
+  );
+}
 }
 
-GoogleMap.contextTypes = {
+GooMap.contextTypes = {
   router: React.PropTypes.object
 };
