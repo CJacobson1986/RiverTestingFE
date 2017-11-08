@@ -39,6 +39,13 @@
   text-align: center;
 }
 
+.birdWrapDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
 .firstFixedPic {
   width: 100px;
   height: 100px;

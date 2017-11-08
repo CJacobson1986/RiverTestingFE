@@ -44,6 +44,8 @@ export default class TestingSupplies extends React.PureComponent {
     this.setState({
       date: date,
       pickUpDate: date
+    },function() {
+      this.forceUpdate();
     })
   }
 
@@ -159,21 +161,6 @@ export default class TestingSupplies extends React.PureComponent {
   }
 
   render() {
-    let weekly = '';
-    let monthly = '';
-    let bimonthly = '';
-    switch(this.state.testingFrequency)
-    {
-      case 'Weekly':
-        weekly = 'selected';
-        break;
-      case 'Monthly':
-        monthly = 'selected';
-        break;
-      case 'Bi-Monthly':
-          bimonthly = 'selected';
-          break;
-    }
     return (
       <div className="productContainer">
         <Helmet title="TestingSupplies" meta={[ { name: 'description', content: 'Description of TestingSupplies' }]}/>
