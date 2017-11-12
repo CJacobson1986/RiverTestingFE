@@ -42,8 +42,7 @@ export default class TestingSupplies extends React.PureComponent {
 
   handleDate = (event, date) => {
     this.setState({
-      date: date,
-      pickUpDate: date
+      date: date.toString().slice(0,15),
     },function() {
       this.forceUpdate();
     })
@@ -68,8 +67,7 @@ export default class TestingSupplies extends React.PureComponent {
         certificationId: json.user.certificationId,
         pickUpDate: json.user.pickUpDate,
         testingFrequency: json.user.testingFrequency,
-        gpsCoords: json.user.testingLocation,
-        testingLocation: json.user.testingLocation
+        testingLocation: JSON.parse(json.user.testingLocation)
       })
     }.bind(this))
   }
@@ -98,9 +96,9 @@ export default class TestingSupplies extends React.PureComponent {
     data.append('address', this.state.address);
     data.append('certification', this.state.certification);
     data.append('certificationId', this.state.certificationId);
-    data.append('pickUpDate', this.state.pickUpDate);
+    data.append('pickUpDate', this.state.date);
     data.append('testingFrequency', this.state.testingFrequency);
-    data.append('testingLocation', JSON.stringify(this.state.testingLocation));
+    data.append('testingLocation', JSON.stringify(this.state.gpsCoords));
 
     fetch("http://localhost:8000/api/updateUser", {
       method: "POST",
@@ -140,8 +138,7 @@ export default class TestingSupplies extends React.PureComponent {
 
   setCoords = (marker) => {
     this.setState({
-      gpsCoords:marker,
-      testingLocation: marker
+      gpsCoords:marker
     })
   }
 
@@ -190,15 +187,16 @@ export default class TestingSupplies extends React.PureComponent {
         <div className="productPickUp">
           <div className="productPickUpTitle">
           Testing Supplies Pick-up date:
+          <p>New Pick-up Date:</p>
           </div>
           <div className="productPickUpDate">
           {this.state.pickUpDate}
+          <p>{this.state.date}</p>
           </div>
         </div>
         <div className="productFrequencyList">
           <div className="productFrequencyTitle">Testing Frequency:</div>
-          <select className="productFrequency" onChange={this.handleTestingFrequency}>
-            <option selected>{this.state.testingFrequency}</option>
+          <select className="productFrequency" value={this.state.testingFrequency} onChange={this.handleTestingFrequency}>
             <option>Please Select...</option>
             <option>Weekly</option>
             <option>Monthly</option>
@@ -208,8 +206,11 @@ export default class TestingSupplies extends React.PureComponent {
         <div className="testingLocation">
           <div className="testingLocationTitle">
           Testing Location:
+          <p>New Testing Location:</p>
           </div>
-          <div className="gpsCoords">{this.state.gpsCoords.lat} & {this.state.gpsCoords.lng}</div>
+          <div className="gpsCoords">lat: {this.state.testingLocation.lat} & lng: {this.state.testingLocation.lng}
+          <p>lat:{this.state.gpsCoords.lat} & lng:{this.state.gpsCoords.lng}</p>
+          </div>
         </div>
         <GooMap className="gooMap" setCoords={this.setCoords}/>
         <input type="submit" className="profileSubmit"  onClick={this.updateProfile}/><br/>

@@ -120,3 +120,8 @@ width: 100%;
 .profileNotification {
   color: white;
 }
+
+.gpsCoords {
+  display: flex;
+  flex-direction: column;
+}
